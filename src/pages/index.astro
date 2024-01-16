@@ -4,14 +4,17 @@ import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GithubIcon from '../components/icons/Github.astro';
+import MailIcon from '../components/icons/Mail.astro';
 import Pill from '../components/Pill.astro';
 --- 
 
-<Layout title="Portfolio">
+<Layout 
+	title="Danmarqu Portfolio | Junior Web Developer and Programmer"
+	description="Explore the portfolio of Daniel Marquez Alonso, showcasing skills in web development and programming.">
 	<main>
 		<section class="w-full lg:w-[740px] mx-auto py-44">
 			<img 
-				class="rounded-full w-12 h-12 mb-4"
+				class="rounded-full size-12 mb-4"
 				src="https://avatars.githubusercontent.com/u/73942105?v=4"
 				alt="danmarqu photo"
 			/>
@@ -33,14 +36,18 @@ import Pill from '../components/Pill.astro';
 					42 Malaga
 				</a>Telefónica Foundation.
 			</h2>
-			<nav class="flex gap-x-2">
+			<nav class="flex gap-x-2 mt-8">
 				<Pill href="https://www.linkedin.com/in/daniel-marquez-alonso/">
-					<LinkedInIcon class="w-6 h-6" />
+					<LinkedInIcon class="size-6" />
 					LinkedIn
 				</Pill>
 				<Pill href="https://github.com/DanielMarquezAlonso">
-					<GithubIcon class="w-6 h-6" />
+					<GithubIcon class="size-6" />
 					Github
+				</Pill>
+				<Pill href="https://github.com/DanielMarquezAlonso">
+					<MailIcon class="size-6" />
+					daniel.marquez.alonso64@gmail.com
 				</Pill>
 			</nav>
 		</section>
