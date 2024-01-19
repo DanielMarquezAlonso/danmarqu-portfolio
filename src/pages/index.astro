@@ -2,30 +2,34 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import GithubIcon from '../components/icons/Github.astro';
-import MailIcon from '../components/icons/Mail.astro';
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
+import GithubIcon from '../components/icons/GithubIcon.astro';
+import MailIcon from '../components/icons/MailIcon.astro';
+import WorkIcon from '../components/icons/WorkIcon.astro';
+import ProyectsIcon from '../components/icons/ProyectsIcon.astro';
 import Pill from '../components/Pill.astro';
+import Experience from '../components/Experience.astro';
+import Proyect from '../components/Proyect.astro';
 --- 
 
 <Layout 
 	title="Danmarqu Portfolio | Junior Web Developer and Programmer"
 	description="Explore the portfolio of Daniel Marquez Alonso, showcasing skills in web development and programming.">
-	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
+	<main class="px-4">
+		<section id="top" class="w-full lg:w-[740px] mx-auto py-44">
 			<img 
 				class="rounded-full size-12 mb-4"
 				src="https://avatars.githubusercontent.com/u/73942105?v=4"
 				alt="danmarqu photo"
 			/>
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-7">
-				Hey, I am <span class="text-blue-500 whitespace-nowrap">Daniel</span> 👋 
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				Hey, I am Daniel 👋 
 				<a href="https://www.linkedin.com/in/daniel-marquez-alonso/"
 				class="flex justify-center items-center"
 				rel="noopener" target="_blank">
 				<Badge>Open to work</Badge></a>
 			</h1>
-			<h2 class="text-xl">
+			<h2 class="text-xl lg:text-2xl text-pretty max-w-[700px]">
 				I'm a <span class="text-blue-500 ">Frontend Developer</span> from
 				<span class="text-blue-500">Spain</span>. Specialized in create amazing
 				user interfaces and experiences. I love to learn new things and share my knowledge 
@@ -36,20 +40,38 @@ import Pill from '../components/Pill.astro';
 					42 Malaga
 				</a>Telefónica Foundation.
 			</h2>
-			<nav class="flex gap-x-2 mt-8">
-				<Pill href="https://www.linkedin.com/in/daniel-marquez-alonso/">
-					<LinkedInIcon class="size-6" />
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<Pill  href="https://www.linkedin.com/in/daniel-marquez-alonso/">
+					<LinkedInIcon class="size-4 md:size-5 lg:size-6" />
 					LinkedIn
 				</Pill>
 				<Pill href="https://github.com/DanielMarquezAlonso">
-					<GithubIcon class="size-6" />
+					<GithubIcon class="size-4 md:size-5 lg:size-6" />
 					Github
 				</Pill>
-				<Pill href="https://github.com/DanielMarquezAlonso">
-					<MailIcon class="size-6" />
+				<Pill href="mailto:daniel.marquez.alonso64@gmail.com">
+					<MailIcon class="size-4 md:size-5 lg:size-6" />
 					daniel.marquez.alonso64@gmail.com
 				</Pill>
+				
 			</nav>
+		</section>
+		 
+		<section id="experience" class="w-full lg:w-[740px] mx-auto py-10 pb-24">
+			<h2 class="text-3xl font-bold mb-6 flex gap-x-2 items-center">
+				<WorkIcon />
+				Work experience
+			</h2>
+			<Experience />
+		</section>
+
+		<section id="proyects" class="w-full lg:w-[740px] mx-auto py-10 pb-24">
+			<h2 class="text-3xl font-bold mb-6 flex gap-x-2 items-center">
+				<ProyectsIcon />
+				Proyects
+			</h2>
+			<Proyect />
+			
 		</section>
 	</main>
 </Layout>
