@@ -1,6 +1,11 @@
 ---
 import CIcon from './icons/CIcon.astro';
 import MakefileIcon from './icons/MakefileIcon.astro';
+import GithubIcon from './icons/GithubIcon.astro';
+import LinkButton from './LinkButton.astro';
+import ReactIcon from './icons/ReactIcon.astro';
+import AngularIcon from './icons/AngularIcon.astro';
+import DjangoIcon from './icons/DjangoIcon.astro';
 
 const TAGS = {
 	C: {
@@ -13,14 +18,45 @@ const TAGS = {
 		class: 'bg-black text-white',
 		icon: MakefileIcon,
 	},
+	REACT: {
+		name: 'React',
+		class: 'bg-black text-white',
+		icon: ReactIcon,
+	},
+	ANGULAR: {
+		name: 'Angular',
+		class: 'bg-black text-white',
+		icon: AngularIcon,
+	},
+	DJANGO: {
+		name: 'Django',
+		class: 'bg-black text-white',
+		icon: DjangoIcon,
+	},
 }
 const PROJECTS = [
+	{
+		title: 'GOEN',
+		description: 'Simulator app for scooter rental, featuring user management, secure PayPal payment, and an admin panel for user and charging station management. Built with ReactJS and Django.',
+		link: 'https://www.github.com',
+		image: '/proyects/goenshots_so.webp',
+		github: 'https://github.com/DanielMarquezAlonso/GOEN-TFG-daw-DanielMarquez',
+		tags: [TAGS.REACT, TAGS.DJANGO]
+	},
+	{
+		title: 'Escape Room Goya',
+		description: 'Escape room game where you must find your lost items before leaving the theater. Developed with AngularJS and Django REST API to store player scores.',
+		link: 'https://www.github.com',
+		image: '/proyects/escape_room_shots_so.webp',
+		github: 'https://github.com/DanielMarquezAlonso/escape_room-Angular_Django',
+		tags: [TAGS.ANGULAR, TAGS.DJANGO]
+	},
 	{
 		title: '42 Cursus',
 		description: '42 Cursus is a project that contains all the projects that I have done during my time at 42 Malaga.',
 		link: 'https://www.github.com',
-		image: '/proyects/portfolio.webp',
-		github: 'https://www.github.com',
+		image: '/proyects/42shots_so.webp',
+		github: 'https://github.com/DanielMarquezAlonso/42MalagaCursus',
 		tags: [TAGS.C, TAGS.MAKEFILE]
 	}
 ]
@@ -30,7 +66,7 @@ const PROJECTS = [
 {
 	PROJECTS.map(project => (
 		<article>
-			<h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">{project.title}</h3>
+			<h3 class="text-2xl font-semibold text-yellow-500 dark:text-yellow-200 mb-2">{project.title}</h3>
 			<p  class="text-lg mb-4 text-pretty">{project.description}</p>
 			<ul class="flex gap-x-2 flex-row mb-2 ">
 				{project.tags.map(tag => (
@@ -48,6 +84,12 @@ const PROJECTS = [
 				src={project.image}
 				alt={`Proyect Screenshot from ${project.title}`}
 			/>
+			<footer class="flex gap-x-4 items-end justify-start mt-4">
+				<LinkButton href={project.github} >
+					<GithubIcon class="size-6" />
+					Source code
+				</LinkButton>
+			</footer>
 		</article>
 	))
 }

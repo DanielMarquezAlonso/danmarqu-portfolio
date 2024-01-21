@@ -7,9 +7,11 @@ import GithubIcon from '../components/icons/GithubIcon.astro';
 import MailIcon from '../components/icons/MailIcon.astro';
 import WorkIcon from '../components/icons/WorkIcon.astro';
 import ProyectsIcon from '../components/icons/ProyectsIcon.astro';
+import AboutMeIcon from '../components/icons/AboutMeIcon.astro';
 import Pill from '../components/Pill.astro';
 import Experience from '../components/Experience.astro';
 import Proyect from '../components/Proyect.astro';
+import AboutMe from '../components/AboutMe.astro';
 --- 
 
 <Layout 
@@ -72,6 +74,14 @@ import Proyect from '../components/Proyect.astro';
 			</h2>
 			<Proyect />
 			
+		</section>
+
+		<section id="about-me" class="w-full lg:w-[740px] mx-auto py-10 pb-24">
+			<h2 class="text-3xl font-bold mb-6 flex gap-x-2 items-center">
+				<AboutMeIcon size="6" />
+				About Me
+			</h2>
+			<AboutMe />
 		</section>
 	</main>
 </Layout>
