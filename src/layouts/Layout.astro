@@ -2,7 +2,6 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro"
 
-
 interface Props {
 	title: string;
 	description: string;
@@ -21,11 +20,11 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative">
+	<body class="relative text-white dark:text-white ">
 		 
 		<div 
 			class="absolute h-full w-full inset-0 -z-10
-			bg-fuchsia-400 bg-[size:20px_20px] opacity-15 blur-[100px]">
+			dark:bg-fuchsia-800 bg-fuchsia-800 [size:20px_20px] opacity-15  blur-[100px]">
 		</div>
 		<Header />
 		<slot />	
@@ -41,16 +40,35 @@ const { title, description } = Astro.props;
 		scroll-behavior: smooth;
 	}
 	body {
+
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
 		overscroll-behavior: none;
+		background-color: var(--color-bg-light);
 
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+     html {
+       scroll-behavior: auto;
+     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+		--color-bg-light: #302336;
+		color: rgba(255, 255, 255, 0.9);
+
+	}
+
+  }
+
+
 </style>
